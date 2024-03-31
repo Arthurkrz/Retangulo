@@ -6,20 +6,18 @@ namespace Retangulo
     {
         static void Main(string[] args)
         {
-            Dados dados = new Dados();
-            bool controle = true;
-            while (controle)
+            DadosRetangulo dadosretangulo = new DadosRetangulo();
             {
                 Console.WriteLine("Insira o valor da largura do retângulo: ");
-                dados.largura = double.Parse(Console.ReadLine());
+                dadosretangulo.Largura = double.Parse(Console.ReadLine());
                 Console.WriteLine("Insira o valor da altura do retângulo: ");
-                dados.altura = double.Parse(Console.ReadLine());
-                if (dados.largura != 0 && dados.altura != 0)
+                dadosretangulo.Altura = double.Parse(Console.ReadLine());
+                if (dadosretangulo.Largura != 0 && dadosretangulo.Altura != 0)
                 {
-                    CalculadoraArea.CalcularArea(dados);
-                    CalculadoraPerimetro.CalcularPerimetro(dados);
-                    CalculadoraDiagonal.CalcularDiagonal(dados);
-                    controle = false;
+                    double area = dadosretangulo.CalcularArea();
+                    double perimetro = dadosretangulo.CalcularPerimetro();
+                    double diagonal = dadosretangulo.CalcularDiagonal();
+                    Console.WriteLine($"A área do retângulo é {area} \n O perímetro do retângulo é {perimetro} \n A diagonal do retângulo é {diagonal}");
                 }
                 else
                 {
