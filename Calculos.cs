@@ -6,24 +6,38 @@ namespace Retangulo
 {
     public class Retangulo
     {
-        public int largura;
+        private int _largura;
         public int altura;
+        public int Largura
+        {
+            get
+            {
+                return _largura;
+            }
+            set
+            {
+                if (value > 0)
+                {
+                    _largura = value;
+                }
+            }
+        }
         public Retangulo(int larguraRetangulo, int alturaRetangulo)
         {
-            largura = larguraRetangulo;
+            Largura = larguraRetangulo;
             altura = alturaRetangulo;
         }
         public double CalcularArea()
         {
-            return largura * altura;
+            return Largura * altura;
         }
         public double CalcularPerimetro()
         {
-            return (largura * 2) + (altura * 2);
+            return (Largura * 2) + (altura * 2);
         }
         public double CalcularDiagonal()
         {
-            return Math.Sqrt((largura * largura) + (altura * altura));
+            return Math.Sqrt((Largura * Largura) + (altura * altura));
         }
     }
 }
